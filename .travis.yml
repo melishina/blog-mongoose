@@ -1,0 +1,7 @@
+language: node_js
+node_js: node
+deploy:
+  app: young-thicket-87121
+  provider: heroku
+  api_key:
+    secure: 37371048-0330-487c-93e3-7607a61e0e1e
