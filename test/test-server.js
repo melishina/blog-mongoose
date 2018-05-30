@@ -64,7 +64,7 @@ describe('Blog posts', function() {
       	});
         return chai.request(app)
           .put(`/blog-post/${res.body[0].id}`)
-          .send(updatedPost);
+          .send(updatedPost)
 	      .then(function(res) {
 	       expect(res).to.have.status(204);
 	      });
