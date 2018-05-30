@@ -27,7 +27,7 @@ describe('Blog posts', function() {
         expect(res).to.be.json;
         expect(res.body).to.be.a('array');
         expect(res.body.length).to.be.above(0);
-        const expectedKeys = ['title', 'content', 'author','publishDate'];
+        const expectedKeys = ['id', 'title', 'content', 'author','publishDate'];
         res.body.forEach(function(item) {
           expect(item).to.be.a('object');
           expect(item).to.have.all.keys(expectedKeys);
@@ -38,7 +38,7 @@ describe('Blog posts', function() {
 
   it('should add a POST', function() {
     const newPost = {title: 'Hellhole Canyon Trail', content: lorem(), author: 'MelMor'};
-    const expectedKeys = ['id','publishDate'].concat(Object.keys(newpost));
+    const expectedKeys = ['id','publishDate'].concat(Object.keys(newPost));
 
     return chai.request(app)
       .post('/blog-post')
